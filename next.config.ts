@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  // Docs-only site; keep the bundle small and predictable on Vercel.
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
