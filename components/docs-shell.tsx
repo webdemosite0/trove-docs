@@ -15,6 +15,7 @@ const SUB_NAV = [
   { href: "/features", label: "Features" },
   { href: "/tros", label: "Tros" },
   { href: "/chat", label: "Chat" },
+  { href: "/refer", label: "Refer" },
   { href: "/security", label: "Security" },
   { href: "/credits", label: "Credits" },
 ];
@@ -31,11 +32,12 @@ const SIDE = [
     ],
   },
   {
-    label: "Foundations",
+    label: "Product",
     items: [
       { href: "/features", label: "Features" },
       { href: "/workspace", label: "Workspace tools" },
       { href: "/credits", label: "Credits & plans" },
+      { href: "/refer", label: "Refer & earn" },
       { href: "/security", label: "Security" },
     ],
   },

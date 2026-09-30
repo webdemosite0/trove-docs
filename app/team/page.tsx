@@ -8,21 +8,41 @@ export default function Page() {
   return (
     <DocsShell active="/team" title="Team">
       <p>
-        Team runs multiple specialist roles in sequence — architecture, UX, engineering, QA — so one brief gets structured coverage.
+        Team brings collaboration into Trove: shared projects, members, invitations,
+        and multi-role runs when your plan includes team features.
       </p>
-      <h2>How it works</h2>
+
+      <h2>Shared work</h2>
+      <p>
+        Team projects appear under <strong>Shared work</strong> on the Team page.
+        Open a project to continue drafts started by you or a teammate.
+      </p>
+
+      <h2>People</h2>
       <ul>
-        <li>Write a clear task with context</li>
-        <li>Start the run and review each role’s output</li>
-        <li>Carry the best pieces into chat, a Tro, or a doc</li>
+        <li>See owners and members on <strong>Your team</strong></li>
+        <li>Invite people from <strong>Members &amp; invitations</strong></li>
+        <li>Only grant access to people you trust with workspace content</li>
       </ul>
+
+      <h2>Multi-role runs</h2>
       <p>
-        Open{" "}
-        <a href="https://troveai.site/team" target="_blank" rel="noreferrer">troveai.site/team</a>
-        {" "}when your plan includes Team.
+        Some Team flows run specialist roles in sequence (for example architecture,
+        design, engineering, QA) so one brief gets structured coverage from different
+        angles.
       </p>
+
+      <h2>Open Team</h2>
       <p>
-        Related: <Link href="/tros">Tros</Link> · <Link href="/features">Features</Link>
+        <a href="https://troveai.site/team" target="_blank" rel="noreferrer">
+          troveai.site/team
+        </a>
+        {" "}— available when your account has team access.
+      </p>
+
+      <p>
+        Related: <Link href="/tros">Tros</Link> · <Link href="/features">Features</Link> ·{" "}
+        <Link href="/refer">Refer &amp; earn</Link>
       </p>
     </DocsShell>
   );
