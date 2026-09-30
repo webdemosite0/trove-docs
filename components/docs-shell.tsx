@@ -1,60 +1,108 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { BrandLockup } from "./logo";
+import { TroveLogo } from "./logo";
 
-const NAV = [
+const TOP_NAV = [
   { href: "/", label: "Home" },
-  { href: "/getting-started", label: "Getting started" },
+  { href: "/overview", label: "Docs", match: "docs" },
+  { href: "/features", label: "Use cases" },
+  { href: "/getting-started", label: "Training" },
+  { href: "/workspace", label: "Resources" },
+];
+
+const SUB_NAV = [
+  { href: "/overview", label: "Overview" },
   { href: "/features", label: "Features" },
   { href: "/tros", label: "Tros" },
   { href: "/chat", label: "Chat" },
-  { href: "/sites", label: "Sites" },
-  { href: "/workspace", label: "Workspace" },
-  { href: "/credits", label: "Credits" },
-  { href: "/team", label: "Team" },
   { href: "/security", label: "Security" },
+  { href: "/credits", label: "Credits" },
 ];
+
+const SIDE = [
+  {
+    label: "Get started",
+    items: [
+      { href: "/getting-started", label: "Quickstart" },
+      { href: "/chat", label: "Use Trove" },
+      { href: "/tros", label: "Meet Tros" },
+      { href: "/sites", label: "Build a site" },
+      { href: "/team", label: "Team runs" },
+    ],
+  },
+  {
+    label: "Foundations",
+    items: [
+      { href: "/features", label: "Features" },
+      { href: "/workspace", label: "Workspace tools" },
+      { href: "/credits", label: "Credits & plans" },
+      { href: "/security", label: "Security" },
+    ],
+  },
+];
+
+function isDocsSection(path: string) {
+  return path !== "/";
+}
 
 export function DocsShell({
   children,
-  active,
-  hideSide = false,
+  active = "/",
+  title,
+  lead,
+  primaryCta,
+  secondaryCta,
+  showMock = false,
 }: {
-  children: ReactNode;
+  children?: ReactNode;
   active?: string;
-  hideSide?: boolean;
+  title?: string;
+  lead?: string;
+  primaryCta?: { href: string; label: string };
+  secondaryCta?: { href: string; label: string };
+  showMock?: boolean;
 }) {
-  return (
-    <div className="shell">
-      <header className="topbar">
-        <div className="topbar-inner">
-          <Link href="/" className="brand" style={{ textDecoration: "none" }}>
-            <BrandLockup size={30} />
-          </Link>
-          <nav className="nav" aria-label="Primary">
-            <Link href="/getting-started" className={active === "/getting-started" ? "active" : ""}>
-              Docs
-            </Link>
-            <Link href="/features" className={active === "/features" ? "active" : ""}>
-              Features
-            </Link>
-            <Link href="/tros" className={active === "/tros" ? "active" : ""}>
-              Tros
-            </Link>
-            <a className="cta" href="https://troveai.site" target="_blank" rel="noreferrer">
-              Open Trove
-            </a>
-          </nav>
-        </div>
-      </header>
+  const docsActive = isDocsSection(active);
 
-      {hideSide ? (
-        children
-      ) : (
-        <div className="layout">
-          <aside className="side">
-            <h2>Documentation</h2>
-            {NAV.map((item) => (
+  return (
+    <>
+      <header className="top">
+        <div className="top-row">
+          <Link href="/" className="brand">
+            <TroveLogo size={28} />
+            <span className="brand-word">Trove</span>
+          </Link>
+
+          <nav className="top-nav" aria-label="Primary">
+            {TOP_NAV.map((item) => {
+              const on =
+                item.match === "docs"
+                  ? docsActive
+                  : active === item.href || (item.href === "/" && active === "/");
+              return (
+                <Link key={item.label} href={item.href} className={on ? "active" : undefined}>
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="top-actions">
+            <a className="btn-try" href="https://troveai.site" target="_blank" rel="noreferrer">
+              Try Trove →
+            </a>
+            <button type="button" className="icon-btn" aria-label="Search" title="Search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M20 20l-3.5-3.5" strokeLinecap="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {docsActive ? (
+          <nav className="subnav" aria-label="Docs sections">
+            {SUB_NAV.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -63,25 +111,111 @@ export function DocsShell({
                 {item.label}
               </Link>
             ))}
-          </aside>
-          <article className="prose">{children}</article>
-        </div>
-      )}
+          </nav>
+        ) : null}
+      </header>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
-            <BrandLockup size={22} />
-            <span style={{ color: "var(--muted)", fontSize: 13 }}>Docs</span>
-          </span>
-          <span>
-            © {new Date().getFullYear()} Trove ·{" "}
-            <a href="https://troveai.site" target="_blank" rel="noreferrer">
-              troveai.site
-            </a>
-          </span>
+      <div className="body">
+        <aside className="sidebar">
+          <Link href="/overview" className={`side-home${active === "/overview" || active === "/" ? " active" : ""}`}>
+            Home
+          </Link>
+
+          {SIDE.map((group) => (
+            <div key={group.label} className="side-group">
+              <div className="side-label">{group.label}</div>
+              {group.items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`side-link${active === item.href ? " active" : ""}`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          ))}
+        </aside>
+
+        <div className={showMock ? "main" : "main doc-only"}>
+          <div className={showMock ? undefined : "prose"}>
+            {title ? <h1 className={showMock ? "page-title" : undefined}>{title}</h1> : null}
+            {lead ? <p className={showMock ? "page-lead" : undefined}>{lead}</p> : null}
+            {(primaryCta || secondaryCta) && showMock ? (
+              <div className="cta-row">
+                {primaryCta ? (
+                  <Link className="btn-primary" href={primaryCta.href}>
+                    {primaryCta.label} →
+                  </Link>
+                ) : null}
+                {secondaryCta ? (
+                  <Link className="btn-link" href={secondaryCta.href}>
+                    {secondaryCta.label} →
+                  </Link>
+                ) : null}
+              </div>
+            ) : null}
+            {children}
+          </div>
+
+          {showMock ? <ProductMock /> : null}
         </div>
-      </footer>
+      </div>
+
+      <a className="ask-ai" href="https://troveai.site/chat" target="_blank" rel="noreferrer">
+        Ask AI
+      </a>
+    </>
+  );
+}
+
+function ProductMock() {
+  return (
+    <div className="mock-wrap">
+      <div className="mock">
+        <div className="mock-rail">
+          <div className="chip">
+            <TroveLogo size={16} />
+            Trove
+          </div>
+          <div className="item" style={{ background: "#16161a", color: "#fff", borderRadius: 8, marginBottom: 8 }}>
+            <strong>+ New chat</strong>
+          </div>
+          <div className="item"><strong>Pinned</strong></div>
+          <div className="item">Launch brief</div>
+          <div className="item">Site rewrite</div>
+          <div className="item" style={{ marginTop: 10 }}><strong>Tros</strong></div>
+          <div className="item">Research lead</div>
+          <div className="item">Support voice</div>
+          <div className="item" style={{ marginTop: 10 }}><strong>Recents</strong></div>
+          <div className="item">Homepage outline</div>
+          <div className="item">Pricing copy</div>
+        </div>
+        <div className="mock-main">
+          <span className="mock-badge">1/6</span>
+          <TroveLogo size={56} />
+          <h3>What should we build?</h3>
+          <p>Start with a goal — Trove can plan, write, and ship artifacts.</p>
+          <div className="mock-cards">
+            <div className="mock-card">
+              <span>Chat</span>
+              Explore and draft
+            </div>
+            <div className="mock-card">
+              <span>Tros</span>
+              Run a specialist
+            </div>
+            <div className="mock-card">
+              <span>Sites</span>
+              Generate a website
+            </div>
+            <div className="mock-card">
+              <span>Team</span>
+              Multi-role run
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
