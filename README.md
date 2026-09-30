@@ -1,8 +1,8 @@
 # Trove Docs
 
-Documentation site for [Trove](https://troveai.site).
+Premium documentation for [Trove](https://troveai.site).
 
-Intended production host: **`https://docs.troveai.site`**
+**Production:** https://docs.troveai.site
 
 ## Local
 
@@ -11,30 +11,12 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Deploy
 
-## Deploy on Vercel
+Connected to Vercel as the `trove-docs` project. Push to `main` to publish.
 
-1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import **`webdemosite0/trove-docs`**
-3. Framework: **Next.js** (auto-detected)
-4. Click **Deploy**
-5. Project → **Settings → Domains** → add `docs.troveai.site`
-6. At your DNS provider, add:
+Domain: `docs.troveai.site` → this repo.
 
-| Type | Name | Value |
-|------|------|--------|
-| CNAME | `docs` | `cname.vercel-dns.com` |
+## Brand
 
-7. Wait until the domain shows **Valid** in Vercel
-
-## Edit content
-
-| Page | File |
-|------|------|
-| Home | `app/page.tsx` |
-| Getting started | `app/getting-started/page.tsx` |
-| Tros | `app/tros/page.tsx` |
-| Credits | `app/credits/page.tsx` |
-
-Push to `main` to publish.
+Uses the official Trove mark (black tile, blue frame, white T) from the product brand.
