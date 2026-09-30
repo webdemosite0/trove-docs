@@ -6,54 +6,18 @@ export const metadata: Metadata = { title: "Sites" };
 
 export default function Page() {
   return (
-    <DocsShell active="/sites">
-      <h1>Sites</h1>
+    <DocsShell active="/sites" title="Sites">
       <p>
-        Sites (Websites) is Trove’s AI website builder. Describe the product, audience,
-        and goals — Trove plans structure, generates pages, and previews the result in
-        a workspace built for iteration.
+        Sites is Trove’s AI website builder. Describe the product and goals — Trove plans structure, generates pages, and previews the result.
       </p>
-
-      <h2>What to expect</h2>
+      <h2>Flow</h2>
       <ul>
-        <li>Multi-section marketing and product pages</li>
-        <li>Header, footer, and varied typography (not a single repeated block)</li>
-        <li>Preview pane alongside the builder conversation</li>
-        <li>Project continuity so you can return and refine</li>
+        <li>Open <a href="https://troveai.site/websites" target="_blank" rel="noreferrer">troveai.site/websites</a></li>
+        <li>Describe industry, pages, tone, and must-have sections</li>
+        <li>Review the plan, then iterate in preview</li>
       </ul>
-
-      <h2>How to start</h2>
-      <ol className="steps">
-        <li>
-          <strong>Open Sites</strong>
-          <p>
-            <a href="https://troveai.site/websites" target="_blank" rel="noreferrer">
-              troveai.site/websites
-            </a>
-          </p>
-        </li>
-        <li>
-          <strong>Describe the site</strong>
-          <p>Include industry, pages needed, tone, and any must-have sections.</p>
-        </li>
-        <li>
-          <strong>Review the plan</strong>
-          <p>Confirm structure before generation when the builder offers a plan step.</p>
-        </li>
-        <li>
-          <strong>Iterate in preview</strong>
-          <p>Ask for section-level changes rather than regenerating everything blindly.</p>
-        </li>
-      </ol>
-
-      <div className="callout">
-        <strong>Tip:</strong> Reference real competitors or brands for tone, but ask for
-        original copy and layout — not cloned content.
-      </div>
-
-      <h2>Related</h2>
       <p>
-        <Link href="/workspace">Workspace tools</Link> · <Link href="/features">Features</Link>
+        Related: <Link href="/workspace">Workspace</Link> · <Link href="/features">Features</Link>
       </p>
     </DocsShell>
   );

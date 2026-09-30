@@ -6,39 +6,26 @@ export const metadata: Metadata = { title: "Chat" };
 
 export default function Page() {
   return (
-    <DocsShell active="/chat">
-      <h1>Chat</h1>
+    <DocsShell active="/chat" title="Chat">
       <p>
-        Chat is the open workspace for thinking with Trove — research, drafting,
-        debugging, brainstorming, and multimodal prompts.
+        Chat is the open workspace for thinking with Trove — research, drafting, debugging, and multimodal prompts.
       </p>
-
       <h2>What you can do</h2>
       <ul>
-        <li>Streamed answers with markdown, code, and structure</li>
+        <li>Streamed answers with markdown and code</li>
         <li>Attach files for grounded responses</li>
-        <li>Generate images when the prompt is clearly visual</li>
-        <li>Jump back into earlier threads from Recents</li>
+        <li>Generate images from visual prompts</li>
+        <li>Return to earlier threads from Recents</li>
       </ul>
-
-      <h2>Best practices</h2>
+      <h2>Tips</h2>
       <ul>
-        <li>State the goal, audience, and constraints up front</li>
-        <li>Iterate: refine the last answer instead of restarting from zero</li>
-        <li>Use Tros when the same role should stay fixed across days</li>
+        <li>State goal, audience, and constraints up front</li>
+        <li>Iterate on the last answer instead of restarting</li>
+        <li>Use a <Link href="/tros">Tro</Link> when the role should stay fixed</li>
       </ul>
-
-      <div className="callout">
-        Open chat at{" "}
-        <a href="https://troveai.site/chat" target="_blank" rel="noreferrer">
-          troveai.site/chat
-        </a>
-        .
-      </div>
-
-      <h2>Related</h2>
       <p>
-        <Link href="/tros">Tros</Link> · <Link href="/credits">Credits</Link>
+        Open{" "}
+        <a href="https://troveai.site/chat" target="_blank" rel="noreferrer">troveai.site/chat</a>.
       </p>
     </DocsShell>
   );

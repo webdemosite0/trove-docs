@@ -1,111 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
-import {
-  IconBot,
-  IconChat,
-  IconFile,
-  IconGlobe,
-  IconSpark,
-  IconTable,
-  IconUsers,
-  IconShield,
-} from "@/components/icons";
 
 export const metadata: Metadata = { title: "Features" };
 
-const FEATURES = [
-  {
-    href: "/chat",
-    icon: <IconChat />,
-    title: "Chat",
-    body: "Streaming replies, attachments, image generation, and long-form reasoning.",
-  },
-  {
-    href: "/tros",
-    icon: <IconBot />,
-    title: "Tros",
-    body: "Named specialists with instructions, tools, accents, and animated splashies.",
-  },
-  {
-    href: "/sites",
-    icon: <IconGlobe />,
-    title: "Sites",
-    body: "Plan and generate multi-page websites with preview in the builder workspace.",
-  },
-  {
-    href: "/workspace",
-    icon: <IconFile />,
-    title: "Documents",
-    body: "Write and refine long-form docs with the same AI quality as chat.",
-  },
-  {
-    href: "/workspace",
-    icon: <IconTable />,
-    title: "Sheets & decks",
-    body: "Spreadsheets and presentations when the output needs structure.",
-  },
-  {
-    href: "/team",
-    icon: <IconUsers />,
-    title: "Team runs",
-    body: "Architect → design → engineering → QA in a guided multi-agent flow.",
-  },
-  {
-    href: "/credits",
-    icon: <IconSpark />,
-    title: "Credits & plans",
-    body: "Transparent usage across chat, Tros, images, and heavy tools.",
-  },
-  {
-    href: "/security",
-    icon: <IconShield />,
-    title: "Security basics",
-    body: "Account access, sessions, and how to keep workspace data under control.",
-  },
-];
-
 export default function Page() {
   return (
-    <DocsShell active="/features">
-      <h1>Features</h1>
+    <DocsShell active="/features" title="Features">
       <p>
-        Trove is a full AI workspace — not only a chatbot. Every major surface shares
-        one account, one design system, and one credit pool.
+        Trove is a full AI workspace — chat, specialist Tros, websites, documents, sheets, decks, and team runs under one account.
       </p>
-
-      <div className="grid-3">
-        {FEATURES.map((f) => (
-          <Link key={f.title} className="card" href={f.href}>
-            <div className="card-icon">{f.icon}</div>
-            <h3>{f.title}</h3>
-            <p>{f.body}</p>
-          </Link>
-        ))}
-      </div>
-
-      <h2>Platform principles</h2>
-      <ul>
-        <li>
-          <strong>Craft over clutter</strong> — calm UI, clear hierarchy, intentional motion.
-        </li>
-        <li>
-          <strong>Specialists when it matters</strong> — Tros hold briefs so quality stays high.
-        </li>
-        <li>
-          <strong>From idea to artifact</strong> — chat can become a site, doc, sheet, or deck.
-        </li>
-        <li>
-          <strong>One home</strong> — projects, recents, and settings stay in the same shell.
-        </li>
-      </ul>
-
-      <div className="callout">
-        <strong>Product URL:</strong>{" "}
-        <a href="https://troveai.site" target="_blank" rel="noreferrer">
-          https://troveai.site
-        </a>
-      </div>
+      <h2>Chat</h2>
+      <p>Streaming replies, attachments, image generation, and long-form reasoning. <Link href="/chat">Learn more</Link></p>
+      <h2>Tros</h2>
+      <p>Named specialists with briefs, tools, splashies, and optional cloud computer. <Link href="/tros">Learn more</Link></p>
+      <h2>Sites</h2>
+      <p>Plan and generate multi-page websites with live preview. <Link href="/sites">Learn more</Link></p>
+      <h2>Workspace</h2>
+      <p>Documents, spreadsheets, presentations, design, and projects. <Link href="/workspace">Learn more</Link></p>
+      <h2>Team</h2>
+      <p>Multi-role runs across architecture, design, engineering, and QA. <Link href="/team">Learn more</Link></p>
+      <h2>Credits</h2>
+      <p>Transparent usage across tools and plans. <Link href="/credits">Learn more</Link></p>
     </DocsShell>
   );
 }
