@@ -12,6 +12,7 @@ const TOP_NAV = [
 
 const SUB_NAV = [
   { href: "/overview", label: "Overview" },
+  { href: "/help", label: "Help" },
   { href: "/features", label: "Features" },
   { href: "/tros", label: "Tros" },
   { href: "/chat", label: "Chat" },
@@ -40,6 +41,10 @@ const SIDE = [
       { href: "/refer", label: "Refer & earn" },
       { href: "/security", label: "Security" },
     ],
+  },
+  {
+    label: "Support",
+    items: [{ href: "/help", label: "Help center" }],
   },
 ];
 
