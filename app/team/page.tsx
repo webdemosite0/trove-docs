@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
 
-export const metadata: Metadata = { title: "Team" };
+export const metadata: Metadata = {
+  title: "Team runs",
+  description: "Run multiple Tros together and collaborate in shared projects: members, invitations, roles, and the shared Team credit pool.",
+};
 
 export default function Page() {
   return (
-    <DocsShell active="/team" title="Team">
+    <DocsShell active="/team" title="Team runs">
       <p>
         Team brings collaboration into Trove: shared projects, members, invitations,
         and multi-role runs when your plan includes team features.

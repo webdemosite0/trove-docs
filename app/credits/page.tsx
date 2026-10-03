@@ -2,15 +2,51 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
 
-export const metadata: Metadata = { title: "Credits" };
+export const metadata: Metadata = {
+  title: "Credits & plans",
+  description:
+    "How Trove credits work: 1 credit = 1,000 tokens, plan allowances (Free 200, Pro 5,000, Team 20,000), rolling windows, image costs, and what happens when you run out.",
+};
 
 export default function Page() {
   return (
     <DocsShell active="/credits" title="Credits & plans">
       <p>
-        Credits measure usage across chat, Tros, images, and heavier tools. Your plan
-        grants a monthly pool. Some plans also use a short rolling window to smooth
-        bursts.
+        Credits measure usage across chat, Tros, images, and heavier tool runs.
+        Your plan grants a monthly pool plus a short rolling window to smooth bursts.
+      </p>
+
+      <h2>How credits work</h2>
+      <p>
+        <strong>1 credit = 1,000 tokens</strong> of model input and output, metered
+        on actual usage reported by the provider and debited after the run. A
+        short reply costs 1–2 credits; generating a landing page is roughly 10.
+      </p>
+      <ul>
+        <li>
+          <strong>Free</strong> — 200 credits/month, 40 credits per rolling 5-hour
+          window. $0.
+        </li>
+        <li>
+          <strong>Pro</strong> — 5,000 credits/month, 500 credits per rolling
+          5-hour window. $19/month.
+        </li>
+        <li>
+          <strong>Team</strong> — 20,000 shared credits/month, 2,000 shared credits
+          per rolling 5-hour window. $99/month.
+        </li>
+      </ul>
+      <p>
+        Credits reset monthly and don't roll over. The 5-hour window is separate:
+        even with monthly credits remaining, you can't spend more than the window
+        allowance inside any 5 hours.
+      </p>
+
+      <h2>If you run out</h2>
+      <p>
+        When your allowance is used up, generations stop with an "out of credits"
+        notice. Upgrade for a bigger pool, or wait for the monthly reset (or the
+        5-hour window to roll, if that's the limit you hit).
       </p>
 
       <h2>Check balance</h2>
@@ -31,16 +67,11 @@ export default function Page() {
 
       <h2>What typically uses credits</h2>
       <ul>
-        <li>Chat and Tro replies</li>
-        <li>Image generation</li>
-        <li>Larger multi-step tool runs (sites, long research)</li>
+        <li>Chat and Tro replies (metered on tokens)</li>
+        <li>Image generation — metered like everything else: debited after the run on actual tokens used, so a failed generation that produces nothing costs nothing</li>
+        <li>Cloud computer sessions — the browsing the Tro does on your behalf counts toward the same pool</li>
+        <li>Larger multi-step tool runs (websites, long research)</li>
       </ul>
-
-      <h2>Plans</h2>
-      <p>
-        Individual and team plans differ by monthly credits, collaboration features,
-        and team seats. Open Plans in the app for current pricing.
-      </p>
 
       <h2>Referrals &amp; credits</h2>
       <p>

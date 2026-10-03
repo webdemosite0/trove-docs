@@ -2,17 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
 
-export const metadata: Metadata = { title: "Workspace" };
+export const metadata: Metadata = {
+  title: "Workspace",
+  description: "Trove workspace tools: documents, spreadspreadsheets, presentations, design, and projects — all inside the same shell.",
+};
 
 export default function Page() {
   return (
     <DocsShell active="/workspace" title="Workspace tools">
       <p>
-        Documents, spreadsheets, presentations, design, and projects — all inside the same Trove shell.
+        Documents, spreadspreadsheets, presentations, design, and projects — all inside the same Trove shell.
       </p>
       <h2>Documents</h2>
       <p>Long-form writing: specs, memos, proposals.</p>
-      <h2>Sheets</h2>
+      <h2>Spreadspreadsheets</h2>
       <p>Tables and trackers when the answer is data-shaped.</p>
       <h2>Decks</h2>
       <p>Pitch and review presentations.</p>

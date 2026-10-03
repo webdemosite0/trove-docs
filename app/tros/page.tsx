@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
 
-export const metadata: Metadata = { title: "Tros" };
+export const metadata: Metadata = {
+  title: "Tros",
+  description: "Meet Tros: specialist AI agents for planning, research, writing, building, data, design, operations, engineering, analysis, and communication.",
+};
 
 export default function Page() {
   return (

@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
 
-export const metadata: Metadata = { title: "Sites" };
+export const metadata: Metadata = {
+  title: "Websites",
+  description: "Build websites with Trove: describe the product and goals, get a multi-page site with live preview, then download or publish it.",
+};
 
 export default function Page() {
   return (
-    <DocsShell active="/sites" title="Sites">
+    <DocsShell active="/sites" title="Websites">
       <p>
         Sites is Trove’s AI website builder. Describe the product and goals — Trove plans structure, generates pages, and previews the result.
       </p>

@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
 
-export const metadata: Metadata = { title: "Chat" };
+export const metadata: Metadata = {
+  title: "Chat",
+  description: "How Trove chat works: streaming replies, file attachments, image generation, voice input, and getting grounded answers.",
+};
 
 export default function Page() {
   return (

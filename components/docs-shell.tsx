@@ -4,21 +4,11 @@ import { TroveLogo } from "./logo";
 
 const TOP_NAV = [
   { href: "/", label: "Home" },
-  { href: "/overview", label: "Docs", match: "docs" },
-  { href: "/features", label: "Use cases" },
-  { href: "/getting-started", label: "Training" },
-  { href: "/workspace", label: "Resources" },
-];
-
-const SUB_NAV = [
-  { href: "/overview", label: "Overview" },
-  { href: "/help", label: "Help" },
+  { href: "/getting-started", label: "Quickstart" },
   { href: "/features", label: "Features" },
   { href: "/tros", label: "Tros" },
-  { href: "/chat", label: "Chat" },
-  { href: "/refer", label: "Refer" },
-  { href: "/security", label: "Security" },
   { href: "/credits", label: "Credits" },
+  { href: "/security", label: "Security" },
 ];
 
 const SIDE = [
@@ -26,9 +16,9 @@ const SIDE = [
     label: "Get started",
     items: [
       { href: "/getting-started", label: "Quickstart" },
-      { href: "/chat", label: "Use Trove" },
-      { href: "/tros", label: "Meet Tros" },
-      { href: "/sites", label: "Build a site" },
+      { href: "/chat", label: "Chat" },
+      { href: "/tros", label: "Tros" },
+      { href: "/sites", label: "Websites" },
       { href: "/team", label: "Team runs" },
     ],
   },
@@ -36,7 +26,9 @@ const SIDE = [
     label: "Product",
     items: [
       { href: "/features", label: "Features" },
-      { href: "/workspace", label: "Workspace tools" },
+      { href: "/workspace", label: "Workspace" },
+      { href: "/publishing", label: "Publishing" },
+      { href: "/exports", label: "Exports" },
       { href: "/credits", label: "Credits & plans" },
       { href: "/refer", label: "Refer & earn" },
       { href: "/security", label: "Security" },
@@ -44,13 +36,13 @@ const SIDE = [
   },
   {
     label: "Support",
-    items: [{ href: "/help", label: "Help center" }],
+    items: [
+      { href: "/help", label: "Help center" },
+      { href: "/troubleshooting", label: "Troubleshooting" },
+      { href: "/supported-files", label: "Supported files" },
+    ],
   },
 ];
-
-function isDocsSection(path: string) {
-  return path !== "/";
-}
 
 export function DocsShell({
   children,
@@ -69,8 +61,6 @@ export function DocsShell({
   secondaryCta?: { href: string; label: string };
   showMock?: boolean;
 }) {
-  const docsActive = isDocsSection(active);
-
   return (
     <>
       <header className="top">
@@ -83,9 +73,7 @@ export function DocsShell({
           <nav className="top-nav" aria-label="Primary">
             {TOP_NAV.map((item) => {
               const on =
-                item.match === "docs"
-                  ? docsActive
-                  : active === item.href || (item.href === "/" && active === "/");
+                active === item.href || (item.href === "/" && active === "/");
               return (
                 <Link key={item.label} href={item.href} className={on ? "active" : undefined}>
                   {item.label}
@@ -107,19 +95,6 @@ export function DocsShell({
           </div>
         </div>
 
-        {docsActive ? (
-          <nav className="subnav" aria-label="Docs sections">
-            {SUB_NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={active === item.href ? "active" : undefined}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        ) : null}
       </header>
 
       <div className="body">
@@ -169,7 +144,13 @@ export function DocsShell({
         </div>
       </div>
 
-      <a className="ask-ai" href="https://troveai.site/chat" target="_blank" rel="noreferrer">
+      <a
+        className="ask-ai"
+        href="https://troveai.site/chat"
+        target="_blank"
+        rel="noreferrer"
+        title="Open Trove chat in the app — ask about anything, including these docs"
+      >
         Ask AI
       </a>
     </>

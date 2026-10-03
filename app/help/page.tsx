@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
 
-export const metadata: Metadata = { title: "Help center" };
+export const metadata: Metadata = {
+  title: "Help center",
+  description: "Answers to the most common Trove questions: getting started, credits and plans, Tros, account and security, troubleshooting, and contacting support.",
+};
 
 export default function Page() {
   return (
@@ -16,7 +19,7 @@ export default function Page() {
       <h2>Getting started</h2>
       <p>
         Start with a goal, idea, or task in the chat box. Trove can gather context, take action, and produce
-        something useful — documents, spreadsheets, decks, sites, research, or a Tro running a job for you.
+        something useful — documents, spreadsheets, decks, websites, research, or a Tro running a job for you.
       </p>
       <ul>
         <li><Link href="/getting-started">Quickstart</Link> — your first build in minutes</li>
@@ -60,6 +63,7 @@ export default function Page() {
         <li>Something is not working? Refresh once, retry the action, then note the page you were on and what you clicked</li>
         <li>Onboarding or profile issues? Check settings — your profile, theme, and preferences live there</li>
         <li>Mobile: the chat page works best signed in; prompts need an account to build and save</li>
+        <li><Link href="/troubleshooting">Full troubleshooting guide</Link></li>
       </ul>
 
       <h2>Contact support</h2>

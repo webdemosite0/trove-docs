@@ -2,14 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
 
-export const metadata: Metadata = { title: "Features" };
+export const metadata: Metadata = {
+  title: "Features",
+  description: "Everything Trove can create: chat, specialist Tros, websites, documents, spreadsheets, decks, team runs, and workspace tools.",
+};
 
 export default function Page() {
   return (
     <DocsShell active="/features" title="Features">
       <p>
         Trove is a full AI workspace — chat, specialist Tros, websites, documents,
-        sheets, decks, team runs, and referrals under one account.
+        spreadsheets, decks, team runs, and referrals under one account.
       </p>
 
       <h2>Chat</h2>

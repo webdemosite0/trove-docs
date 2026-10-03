@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DocsShell } from "@/components/docs-shell";
 
-export const metadata: Metadata = { title: "Refer & earn" };
+export const metadata: Metadata = {
+  title: "Refer & earn",
+  description: "Share Trove and earn rewards: how the affiliate program works, where to find your invite link, and current offers.",
+};
 
 export default function Page() {
   return (
@@ -43,7 +46,7 @@ export default function Page() {
 
       <h2>Tips</h2>
       <ul>
-        <li>Share with people who will actually use chat, Tros, or Sites</li>
+        <li>Share with people who will actually use chat, Tros, or Websites</li>
         <li>Pair the link with a short note about what you use Trove for</li>
         <li>Team and business users often convert when they see shared projects</li>
       </ul>
