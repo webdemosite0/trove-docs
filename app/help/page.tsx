@@ -34,7 +34,7 @@ export default function Page() {
       </p>
       <ul>
         <li><Link href="/credits">Credits</Link> — how usage is measured and what plans include</li>
-        <li>Check your remaining balance anytime in the Wallet section of settings</li>
+        <li>Check your remaining balance anytime in the sidebar or under Settings → Billing</li>
         <li>If a payment succeeded but your plan did not update, contact support with the payment time</li>
       </ul>
 
@@ -70,7 +70,7 @@ export default function Page() {
       <p>
         Email{" "}
         <a href="mailto:official@troveai.site?subject=Trove%20support">official@troveai.site</a>{" "}
-        with the page you were on, what you clicked, and what happened. We never ask for your password or API keys.
+        with the page you were on, what you clicked, and what happened. We never ask for your password or API keys. Expect a reply within one business day.
       </p>
       <p>
         Related: <Link href="/getting-started">Quickstart</Link> · <Link href="/credits">Credits</Link> ·{" "}

@@ -37,16 +37,31 @@ export default function Page() {
         </li>
       </ul>
       <p>
-        Credits reset monthly and don't roll over. The 5-hour window is separate:
-        even with monthly credits remaining, you can't spend more than the window
-        allowance inside any 5 hours.
+        Credits reset monthly and don't roll over.
+      </p>
+
+      <h2>The 5-hour rolling window</h2>
+      <p>
+        Separate from the monthly pool: inside any rolling 5 hours you can't
+        spend more than your window allowance, even with monthly credits
+        remaining. It smooths bursts so one long session doesn't eat the month.
+      </p>
+      <ul>
+        <li><strong>Free</strong> — 40 credits per 5 hours</li>
+        <li><strong>Pro</strong> — 500 credits per 5 hours</li>
+        <li><strong>Team</strong> — 2,000 shared credits per 5 hours</li>
+      </ul>
+      <p>
+        Hit the window but not the month? Wait for it to roll — usually under an
+        hour of lighter use.
       </p>
 
       <h2>If you run out</h2>
       <p>
-        When your allowance is used up, generations stop with an "out of credits"
-        notice. Upgrade for a bigger pool, or wait for the monthly reset (or the
-        5-hour window to roll, if that's the limit you hit).
+        At zero, generations stop immediately with an "out of credits" notice —
+        nothing is queued or partially run. To keep working: upgrade for a bigger
+        pool, or wait for the monthly reset (or the 5-hour window to roll, if
+        that's the limit you hit).
       </p>
 
       <h2>Check balance</h2>

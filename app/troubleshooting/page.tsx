@@ -16,7 +16,8 @@ export default function Page() {
         <a href="mailto:official@troveai.site?subject=Trove%20support">
           official@troveai.site
         </a>{" "}
-        with the page you were on, what you clicked, and what happened.
+        with the page you were on, what you clicked, and what happened. We reply
+        within one business day.
       </p>
 
       <h2>Something isn't working</h2>
@@ -37,7 +38,7 @@ export default function Page() {
 
       <h2>Payment succeeded but plan didn't update</h2>
       <ul>
-        <li>Wait a minute and refresh — webhook delivery can lag</li>
+        <li>Wait a minute and refresh — payment confirmation can take a minute</li>
         <li>Contact support with the payment time and email on the account</li>
       </ul>
 
